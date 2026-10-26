@@ -1,0 +1,41 @@
+body{
+background-color: rgb(252, 252, 252);
+    color: black;
+    /* essa font-family é bastante usada para estilos de jogos. ref: google*/
+      font-family:  'Press Start 2P', 'Arcade Byte Pixel', monospace;
+
+}
+
+header{
+    background-color: black;
+    color: white;
+      border-radius:  10px;
+      
+}
+
+a{
+ color: white;
+ text-decoration: none;
+}
+nav{
+      display: flex;            /* Ativa o modo Flexbox */
+            justify-content: center;  /* Alinha os itens horizontalmente*/
+             
+}
+li :hover{
+    color: aqua;
+}
+
+/* 1. Remove as bolinhas da lista e coloca os itens lado a lado */
+nav ul {
+    display: flex;            /* Ativa o modo Flexbox */
+    list-style-type: none;    /* Remove as bolinhas da lista */
+    padding: 0;
+    margin: 0;
+    justify-content: center;  /* Centraliza o menu (mude para flex-start se quiser na esquerda) */
+}
+
+/* 2. Cria um espaçamento entre uma palavra e outra */
+nav li {
+    margin: 0 15px;           /* Dá um espaço de 15px nas laterais de cada palavra */
+}
