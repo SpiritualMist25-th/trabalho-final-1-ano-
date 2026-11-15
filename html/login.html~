@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="Pt-Br">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+</html>
+<body>
+    <footer>
+        <nav>
+             <ul>
+                <li><a href="post.html" target="_blank">Poste também</a></li>
+                <li><a href="sobre.html" target="_blank">Sobre</a></li>
+                <li><a href="config.html" target="_blank">configurações</a></li>
+            </ul>
+        </nav>
+    </footer>
+
+    <main>
+        <h1> Faça seu login </h1>
+
+        <div class="input-usuario">
+         <label>Digite seu nome</label>
+         <input type="email" id="email" name="email">
+         <label>Senha</label>
+         <input type="password" id="senha" name="senha">
+        </div>
+    </main>
+    <footer>
+        <div class="botao">
+            <button>Log in </button>
+        </div>
+
+        <p>Crie sua conta aqui <a href="criar_conta.html">crie sua conta </a></p>
+    </footer>
+</body>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bem-vindo ao fórum</title>
+</head>
+
+<body>
+  <header class="cabecalho-do-post">
+    <h1>Fórum da comunidade</h1>
+  </header>
+
+  <main class="layout">
+    <aside class="esquerda">
+      <h2>Jogos relevantes</h2>
+
+      <div class="galeria">
+        <figure class="images">
+          <img src="imagem1.png" alt="Imagem do jogo 1">
+        </figure>
+
+        <figure class="images">
+          <img src="imagem2.png" alt="Imagem do jogo 2">
+        </figure>
+
+        <figure class="images">
+          <img src="imagem3.png" alt="Imagem do jogo 3">
+        </figure>
+
+        <figure class="images">
+          <img src="imagem4.png" alt="Imagem do jogo 4">
+        </figure>
+
+        <figure class="images">
+          <img src="imagem5.png" alt="Imagem do jogo 5">
+        </figure>
+      </div>
+    </aside>
+
+    <section class="direita">
+      <h2>Criar novo post</h2>
+
+      <form class="postar" method="post" enctype="multipart/form-data">
+        <label for="titulo">Título do post</label>
+        <input
+          id="titulo"
+          name="titulo-do-post"
+          type="text"
+          placeholder="Título do seu post"
+          maxlength="80"
+          required
+        >
+
+        <label for="nome">Nome do jogo</label>
+        <input
+          id="nome"
+          name="nomejogo"
+          type="text"
+          placeholder="Ex.: Elden Ring"
+          maxlength="100"
+          required
+        >
+
+        <label for="descricao">Descrição do post</label>
+        <textarea
+          id="descricao"
+          name="descricaopost"
+          placeholder="Fale sobre seu jogo aqui"
+          maxlength="4000"
+          required
+        ></textarea>
+
+        <label for="imagem">Imagem do jogo</label>
+        <input
+          id="imagem"
+          name="foto"
+          type="file"
+          accept="image/*"
+          required
+        >
+
+        <small>PNG, JPG ou GIF (máx. 5 MB)</small>
+
+        <div id="imagePreview" hidden>
+          <img id="previewImg" alt="Pré-visualização da imagem">
+          <button type="button" id="removeImg">Remover imagem</button>
+        </div>
+
+        <button type="submit">Publicar no fórum</button>
+      </form>
+    </section>
+  </main>
+</body>
+</html>
