@@ -4,8 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Bem-vindo ao fórum</title>
-  <link rel="stylesheet" href="../css/index.css">
   <script src="../scripts/index.js" defer></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 10px; }
+    .layout { display: flex; gap: 20px; align-items: flex-start; }
+    .esquerda, .direita { flex: 1; }
+    .postar { display: flex; flex-direction: column; gap: 8px; }
+
+    /* carrossel */
+    .galeria { position: relative; max-width: 300px; margin: 0 auto; }
+    .galeria .images { margin: 0; }
+    .galeria img { width: 100%; aspect-ratio: 401 / 650; height: auto; object-fit: cover; border-radius: 10px; display: block; }
+    .carrossel-pontos { display: flex; justify-content: center; gap: 8px; margin-top: 8px; }
+    .carrossel-pontos button { width: 12px; height: 12px; padding: 0; border-radius: 50%; border: 1px solid #555; background: #ccc; cursor: pointer; }
+    .carrossel-pontos button.ativo { background: #000; }
+
+    .post img, #previewImg { max-width: 100%; }
+  </style>
 </head>
 
 <body>
@@ -20,23 +35,35 @@
 
       <div class="galeria">
         <figure class="images">
-          <img src="imagem1.png" alt="Imagem do jogo 1">
+          <img src="../imagem1.png" alt="Imagem do jogo 1">
         </figure>
 
         <figure class="images">
-          <img src="imagem2.png" alt="Imagem do jogo 2">
+          <img src="../imagem2.png" alt="Imagem do jogo 2">
         </figure>
 
         <figure class="images">
-          <img src="imagem3.png" alt="Imagem do jogo 3">
+          <img src="../imagem3.png" alt="Imagem do jogo 3">
         </figure>
 
         <figure class="images">
-          <img src="imagem4.png" alt="Imagem do jogo 4">
+          <img src="../imagem4.png" alt="Imagem do jogo 4">
         </figure>
 
         <figure class="images">
-          <img src="imagem5.png" alt="Imagem do jogo 5">
+          <img src="../imagem5.png" alt="Imagem do jogo 5">
+        </figure>
+
+        <figure class="images">
+          <img src="../imagem6.png" alt="Imagem do jogo 6">
+        </figure>
+
+        <figure class="images">
+          <img src="../imagem7.png" alt="Imagem do jogo 7">
+        </figure>
+
+        <figure class="images">
+          <img src="../imagem8.png" alt="Imagem do jogo 8">
         </figure>
       </div>
     </aside>

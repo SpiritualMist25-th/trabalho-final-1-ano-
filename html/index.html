@@ -84,6 +84,43 @@ div.passo1{
     margin-top: 150px; /* espaço acima do elemento */
 }
 
+
+div.passo1 .numero{
+    background-color: rgb(255, 0, 0);
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+div.passo1 .conteudo-passo{
+    text-align: left;
+    max-width: 600px;
+}
+
+div.passo1 .conteudo-passo h2{
+    margin-top: 0;
+}
+
+div.passo1 .conteudo-passo a{
+    margin-left: 0;
+    font-size: inherit;
+    color: rgb(255, 80, 80);
+    text-decoration: underline;
+}
+
+h2.titulo-passos{
+    text-align: center;
+    margin-top: 100px;
+}
+
 footer{
     margin-top:125px; /* espaço acima do elemento */
     padding: 15px; /* espaço dentro do elemento */
@@ -135,18 +172,30 @@ hr {
         </main>
 
 
+    <h2 class="titulo-passos">PASSO A PASSO</h2>
+
     <div class="passo1">
-<h1>aqui sera o passo 1 </h1>
-    </div>
-     
-    <div class="passo1">
-<h1>aqui e onde será apresentado o passo 2 </h1>
+        <div class="numero">1</div>
+        <div class="conteudo-passo">
+            <h2>Crie sua conta</h2>
+            <p>Clique em <a href="login.html">login</a> e escolha criar conta. Informe seu nome, um e-mail válido e uma senha com pelo menos 6 caracteres.</p>
+        </div>
     </div>
 
     <div class="passo1">
-        <h1>
-            aqui e onde sera o passo 3 
-        </h1>
+        <div class="numero">2</div>
+        <div class="conteudo-passo">
+            <h2>Faça login</h2>
+            <p>Entre com o e-mail e a senha que você cadastrou. Depois do login você é levado direto para a página de posts.</p>
+        </div>
+    </div>
+
+    <div class="passo1">
+        <div class="numero">3</div>
+        <div class="conteudo-passo">
+            <h2>Publique seu post</h2>
+            <p>Na página de <a href="post.html">posts</a>, preencha o título, o nome do jogo, a descrição e escolha uma imagem. Clique em "Publicar no fórum" e seu post aparece na lista da comunidade.</p>
+        </div>
     </div>
 
    
