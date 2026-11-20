@@ -5,107 +5,65 @@
         <title>Login</title>
         <script src="../scripts/index.js" defer></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../estilo.css">
         <style>
-
-body{
-    background-color:black;
-    color:white;
-    font-family:Arial; /* o font-family serve para definir a fonte do texto*/
-}
-header{
-    margin:px; /*o margin serve para dar espaço ao redor do elemento */
-    padding:5px; /* o padding serve para dar espaço dentro do elemento */
-    justify-content:space-between;   /* título na esquerda, links na direita */
-    display:flex; /* serve para alinhar os elementos filhos */
-    background-color:rgb(255, 0, 0); /* cor de fundo do header */
-    border: 2px solid rgb(252, 252, 252); /* borda do header */
-   border-radius: 10px; /* borda arredondada do header */
-}
-h1{ 
-    font-family:sans-serif;
-    letter-spacing: 3px;/* o serve para dar espaço entre os caracteres */
-}
-a{
-    text-decoration:none; /* o none serve para tirar a borda do link */
-    color:white;
-    margin-left:40px; /* espaço entre os links */
-}
-
+/* as cores (fundo, laranja, detalhes) vêm do estilo.css, aqui fica só o layout do login */
 
 main{
     display:flex; /* serve para alinhar os elementos filhos */
-    flex-direction:column; /* serve para alinhar os elementos filhos */
-    align-items:center; /* serve para alinhar os elementos filhos */
-    justify-content:center; /* serve para alinhar os elementos filhos */
-     max-width:400px;                       /* largura máxima: não abre mais pros lados */
-    margin:50px auto 0; 
-    margin-top:50px; /* espaço acima do elemento */
-    background-color:rgba(2, 45, 136, 0.652); /* cor de fundo do elemento */
+    flex-direction:column; /* um embaixo do outro */
+    align-items:center; /* centraliza na horizontal */
+    justify-content:center;
+    max-width:400px; /* largura máxima: não abre mais pros lados */
+    margin:50px auto 0; /* centraliza a caixa na tela */
+    background-color:var(--card); /* cor de fundo da caixa */
     border-radius: 10px; /* borda arredondada do elemento */
     padding: 15px; /* espaço dentro do elemento */
-    border: 2px solid rgb(0, 28, 120); /* borda do elemento */
-    p{
-        a{
-            color:rgb(64, 204, 255); /* cor do link */
-        }
-    }
-    
-    label{
-    display:flex; /* serve para alinhar os elementos filhos */
-    flex-direction:column; /* serve para alinhar os elementos filhos */
-    align-items:center; /* serve para alinhar os elementos filhos */
-    justify-content:center; /* serve para alinhar os elementos filhos */
-    margin-bottom:10px; /* espaço abaixo do elemento */
-}
-input:focus{
-    outline:none; /* remove a borda do input quando ele está em foco */
-    box-shadow:  0 0 10px rgba(4, 12, 237, 0.836); /* sombra do input quando ele está em foco */
-}
- input{
-  color: white; /* cor do texto do input */
-      background-color: rgb(1, 1, 1); /* cor de fundo do input */
-      padding: 10px; /* espaço dentro do input */
-      border-radius: 7px; /* borda arredondada do input */
-      border: 2px solid rgb(4, 105, 237); /* borda do input */
-      transition: box-shadow 0.2s; /* animação suave */
-    }
-    button{
-        color: rgb(0, 0, 0); /* cor do texto do botão */
-      background-color: rgb(247, 247, 247); /* cor de fundo do botão */
-      padding: 10px; /* espaço dentro do botão */
-      margin-top: 35px; /* espaço acima do botão */
-      border-radius: 7px; /* borda arredondada do botão */
-      border: 3px solid rgb(190, 41, 41); /* borda do botão */
-      transition: box-shadow 0.2s; /* animação suave */
-       cursor:pointer;                            /* mãozinha ao passar o mouse */
-  transition:background-color 0.2s, box-shadow 0.2s; /* anima as duas mudanças */
-  text-align:center;          /* centraliza o botão e a mensagem dentro da div */
-  width:100%;                 /* a div ocupa toda a largura do main, então o centro é o centro da caixa */
-    }
-    button:hover{
-  background-color:rgb(190, 41, 41);         /* fundo fica vermelho no hover */
-  color:white;                               /* texto fica branco para dar contraste */
-  box-shadow:0 0 12px rgb(255, 0, 0);        /* brilho vermelho em volta */
-}
+    border: 2px solid var(--detalhe); /* borda do elemento */
+    box-shadow: 0px 0px 18px var(--sombra); /* sombra da caixa */
 }
 
+main h1{
+    text-align:center; /* título centralizado */
+}
+
+main label{
+    display:flex; /* serve para alinhar os elementos filhos */
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    margin-bottom:10px; /* espaço abaixo do elemento */
+}
+
+main input{
+    margin-bottom:10px; /* espaço entre um campo e o próximo label */
+}
+
+main button{
+    margin-top:35px; /* espaço acima do botão */
+    border: 3px solid var(--destaque); /* borda laranja */
+    transition:background-color 0.2s, box-shadow 0.2s; /* anima as duas mudanças */
+    width:100%; /* ocupa toda a largura da caixa */
+}
+
+main button:hover{
+    background-color:var(--destaque); /* fundo fica laranja no hover */
+    color:white; /* texto fica branco para dar contraste */
+    box-shadow:0 0 12px var(--destaque); /* brilho laranja em volta */
+}
+
+.msg{
+    text-align:center; /* mensagem centralizada */
+    min-height:1.4em; /* reserva espaço para a mensagem do JS */
+}
 
 footer{
     margin-top:125px; /* espaço acima do elemento */
     padding: 15px; /* espaço dentro do elemento */
     border-radius: 10px; /* borda arredondada do elemento */
-    background-color: rgba(72, 70, 70, 0.485); /* cor de fundo do elemento */
+    background-color: var(--card); /* cor de fundo do elemento */
     text-align:center; /* centraliza o texto */
 }
-
-
-hr {             
-  border: none;  /* remove a borda padrão do hr */
-  height: 2px;                /* espessura da linha */
-  background-color: rgb(255, 254, 254);      /* cor da linha */
-}
-
-
         </style>
     </head>
 
@@ -125,7 +83,7 @@ hr {
         <h1> Faça seu login </h1>
 
         <div class="input-usuario">
-         <label for="email">Digite seu nome</label>
+         <label for="email">Digite seu e-mail</label>
          <input type="email" id="email" name="email">
          <label for="senha">Senha</label>
          <input type="password" id="senha" name="senha">

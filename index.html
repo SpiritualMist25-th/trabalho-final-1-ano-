@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="Pt-Br">
+
+<head>
+<meta charset="UTF-8">
+<title>Game Post</title>
+<script src="scripts/index.js" defer></script>
+<link rel="stylesheet" href="estilo.css">
+<style>
+/* as cores (fundo, laranja, detalhes) vêm do estilo.css, aqui fica só o layout */
+
+body{
+    font-family:Arial; /* o font-family serve para definir a fonte do texto*/
+}
+
+div.bem-vindo{
+    text-align:center; /* centraliza o texto */
+    margin-top:50px; /* espaço acima do elemento */
+}
+
+div.conteudo {
+  display: flex;
+  align-items: flex-start; /* serve para alinhar os elementos filhos */
+}
+
+div.videos{
+  margin-top:50px; /* espaço acima do elemento */
+  padding: 15px; /* espaço dentro do elemento */
+  border-radius: 10px; /* borda arredondada do elemento */
+  background-color: var(--card); /* cor de fundo do elemento */
+  width: 50%; /* largura do elemento */
+}
+
+div.videos video{
+  width: 100%; /* largura do vídeo */
+  height: 365px; /* altura do vídeo */
+}
+
+div.texto-dr{
+    border: 2px solid var(--destaque); /* borda laranja */
+    border-radius: 10px; /* borda arredondada do elemento */
+    background-color: var(--card); /* cor de fundo do elemento */
+    padding: 15px; /* espaço dentro do elemento */
+    margin-top:50px; /* espaço acima do elemento */
+    text-align:center; /* centraliza o texto */
+    width: 50%; /* largura do elemento */
+    height: 50%; /* altura do elemento */
+}
+
+div.passo1{
+    border-left: 2px solid var(--destaque); /* borda laranja */
+    border-right: 2px solid var(--destaque); /* borda laranja */
+    border-radius: 10px; /* borda arredondada do elemento */
+    background-color: var(--card); /* cor de fundo do elemento */
+    padding: 15px; /* espaço dentro do elemento */
+    text-align:center; /* centraliza o texto */
+    display: flex;               /* ativa o flexbox */
+    justify-content: center;   /* centraliza horizontalmente */
+    margin-top: 150px; /* espaço acima do elemento */
+}
+
+div.passo1 .numero{
+    background-color: var(--destaque); /* bolinha laranja */
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+div.passo1 .conteudo-passo{
+    text-align: left;
+    max-width: 600px;
+}
+
+div.passo1 .conteudo-passo h2{
+    margin-top: 0;
+}
+
+div.passo1 .conteudo-passo a{
+    font-size: inherit;
+    color: var(--destaque);
+    text-decoration: underline;
+}
+
+h2.titulo-passos{
+    text-align: center;
+    margin-top: 100px;
+}
+
+footer{
+    margin-top:125px; /* espaço acima do elemento */
+    padding: 15px; /* espaço dentro do elemento */
+    border-radius: 10px; /* borda arredondada do elemento */
+    background-color: var(--card); /* cor de fundo do elemento */
+    text-align:center; /* centraliza o texto */
+}
+
+hr {
+  border: none;  /* remove a borda padrão do hr */
+  height: 2px;                /* espessura da linha */
+  background-color: var(--detalhe);      /* cor da linha */
+}
+
+</style>
+
+</head>
+
+    <body>
+        <header>
+            <h1> GAME POST</h1>
+        <nav>
+            
+                <a href="html/post.html">Posts</a>
+                <a href="html/login.html">login</a>
+                <a href="html/sobre.html">Sobre</a>
+                <a href="html/config.html">configurações</a>
+            
+        </nav>
+        </header>
+
+        <main>
+
+<div class="bem-vindo">
+<h2>BEM-VINDO AO GAME POST</h2>
+</div>
+
+<div class="conteudo">
+<div class="videos">
+    <video src="video.mp4"></video>
+</div>
+
+<div class="texto-dr">
+<h2>Vídeo demonstativo</h2>
+</div>
+</div>
+        </main>
+
+
+    <h2 class="titulo-passos">PASSO A PASSO</h2>
+
+    <div class="passo1">
+        <div class="numero">1</div>
+        <div class="conteudo-passo">
+            <h2>Crie sua conta</h2>
+            <p>Clique em <a href="html/login.html">login</a> e escolha criar conta. Informe seu nome, um e-mail válido e uma senha com pelo menos 6 caracteres.</p>
+        </div>
+    </div>
+
+    <div class="passo1">
+        <div class="numero">2</div>
+        <div class="conteudo-passo">
+            <h2>Faça login</h2>
+            <p>Entre com o e-mail e a senha que você cadastrou. Depois do login você é levado direto para a página de posts.</p>
+        </div>
+    </div>
+
+    <div class="passo1">
+        <div class="numero">3</div>
+        <div class="conteudo-passo">
+            <h2>Publique seu post</h2>
+            <p>Na página de <a href="html/post.html">posts</a>, preencha o título, o nome do jogo, a descrição e escolha uma imagem. Clique em "Publicar no fórum" e seu post aparece na lista da comunidade.</p>
+        </div>
+    </div>
+
+   
+    <footer>
+ <p>&copy; 2026 Game Post. Todos os direitos reservados.</p>
+</footer>
+
+    </body>
+
+
+</html>
