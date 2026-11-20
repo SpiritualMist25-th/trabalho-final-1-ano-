@@ -3,15 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Criar conta</title>
+<title>Criar conta         🎮</title>
 <script src="../scripts/index.js" defer></script>
-<link rel="stylesheet" href="../estilo.css">
+  <style>
+    body{
+    background-color:black;                    /* fundo preto do site */
+    color:white;                               /* texto branco */
+    font-family:Arial;                         /* mesma fonte */
+}
+
+header{
+    padding:5px;                               /* espaço dentro do header */
+    display:flex;                              /* alinha os filhos */
+    justify-content:flex-end;                  /* aqui só tem o menu, então ele vai para a direita */
+    background-color:rgb(255, 0, 0);           /* vermelho do header */
+    border:2px solid rgb(252, 252, 252);       /* borda branca */
+    border-radius:10px;                        /* cantos arredondados */
+    h1{
+      text-align:left;                             /* título do site à esquerda */
+      margin-right:auto;                           /* título do site à esquerda */
+    }
+}
+a{
+    text-decoration:none;                      /* tira o sublinhado */
+    color:white;                               /* cor do link */
+    margin-left:40px;                          /* espaço entre os links do menu */
+}
+
+main{
+    display:flex;                              /* alinha os filhos */
+    flex-direction:column;                     /* um embaixo do outro */
+    align-items:center;                        /* centraliza na horizontal */
+    max-width:400px;                           /* a caixa não abre pros lados */
+    box-sizing:border-box;                     /* o padding não aumenta a largura */
+    margin:50px auto 0;                        /* centraliza a caixa na tela */
+    padding:15px;                              /* espaço dentro da caixa */
+    background-color:rgba(2, 45, 136, 0.652);  /* azul translúcido do login */
+    border-radius:10px;                        /* cantos arredondados */
+    border:2px solid rgb(0, 28, 120);          /* borda azul escura */
+}
+h1{
+    font-family:sans-serif;                    /* mesma fonte do título do login */
+    letter-spacing:3px;                        /* espaço entre as letras */
+    text-align:center;                         /* título centralizado */
+}
+
+form{
+    display:flex;                              /* alinha os campos */
+    flex-direction:column;                     /* um embaixo do outro */
+    width:100%;                                /* o formulário ocupa a largura da caixa */
+}
+label{
+    text-align:center;                         /* texto do label centralizado, como no login */
+    margin-bottom:10px;                        /* espaço abaixo do label */
+}
+
+input{
+    color:white;                               /* cor do texto digitado */
+    background-color:rgb(1, 1, 1);             /* fundo preto do campo */
+    padding:10px;                              /* espaço dentro do campo */
+    margin-bottom:10px;                        /* espaço entre um campo e o próximo label */
+    border-radius:7px;                         /* cantos arredondados */
+    border:2px solid rgb(4, 105, 237);         /* borda azul */
+    transition:box-shadow 0.2s;                /* animação suave */
+}
+input:focus{
+    outline:none;                              /* tira a borda padrão */
+    box-shadow:0 0 10px rgba(4, 12, 237, 0.836); /* brilho azul ao clicar */
+}
+
+button{
+    color:rgb(0, 0, 0);                        /* texto preto */
+    background-color:rgb(247, 247, 247);       /* fundo claro */
+    margin-top:25px;                           /* espaço acima do botão */
+    padding:10px;                              /* espaço dentro do botão */
+    border-radius:7px;                         /* cantos arredondados */
+    border:3px solid rgb(190, 41, 41);         /* borda vermelha */
+    cursor:pointer;                            /* mãozinha ao passar o mouse */
+    transition:background-color 0.2s, box-shadow 0.2s; /* anima o hover */
+}
+button:hover{
+    background-color:rgb(190, 41, 41);         /* fundo vermelho no hover */
+    color:white;                               /* texto branco no hover */
+    box-shadow:0 0 12px rgb(255, 0, 0);        /* brilho vermelho */
+}
+
+.msg{
+    text-align:center;                         /* mensagem de erro centralizada */
+    min-height:1.4em;                          /* reserva espaço para a mensagem do JS */
+}
+
+main p{
+    text-align:center;                         /* "Já tem conta?" centralizado */
+}
+main p a{
+    color:rgb(64, 204, 255);                   /* link azul-claro, igual ao login */
+    margin-left:0;                             /* tira o espaço de 40px do menu */
+}
+  </style>
 </head>
 <body>
 <header>
+  <h1>GAME POST          🎮</h1>
 <nav>
 <a href="index.html">Início</a>
-<a href="post.html">Poste também</a>
+<a href="posts.html">Posts</a>
 <a href="login.html" id="linkLogin">login</a>
 <a href="sobre.html">Sobre</a>
 <a href="config.html">configurações</a>
