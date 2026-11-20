@@ -40,13 +40,8 @@ function mostrarMensagem(texto, deuCerto) {
 function aplicarConfiguracoes() {
   var config = lerDados('config', { escuro: false, tamanho: '1rem' });
 
-  if (config.escuro) {
-    document.body.style.backgroundColor = '#121212';
-    document.body.style.color = 'white';
-  } else {
-    document.body.style.backgroundColor = '';
-    document.body.style.color = '';
-  }
+  // liga ou desliga a classe "escuro"; as cores ficam no estilo.css
+  document.body.classList.toggle('escuro', config.escuro);
 
   document.body.style.fontSize = config.tamanho;
   var links = document.querySelectorAll('a');
