@@ -1,47 +1,239 @@
-/* ===== MODO ESCURO =====
-   O JS só liga/desliga a classe "escuro" no <body>.
-   Todas as cores do tema escuro ficam aqui. */
+/* ===== CORES DO SITE =====
+   As cores ficam em variáveis (--nome), assim eu troco uma vez só
+   aqui em cima e muda no site inteiro.
 
+   MODO CLARO  = fundo branco, detalhes azuis, destaque laranja
+   MODO ESCURO = fundo azul,   detalhes brancos, destaque laranja
+
+   O JS só coloca ou tira a classe "escuro" no <body>,
+   e essa classe troca os valores das variáveis. */
+
+/* modo claro (é o padrão, quando o body não tem a classe) */
+:root {
+  --fundo: #f2f6fc;
+  --card: #ffffff;
+  --campo: #ffffff;
+  --texto: #0a2342;
+  --destaque: #f57c00;      /* laranja (no lugar do vermelho) */
+  --detalhe: #1450a3;       /* azul: bordas e botões */
+  --link: #1450a3;
+  --sombra: rgba(20, 80, 163, 0.35);
+  --placeholder: #6b7a99;
+}
+
+/* modo escuro (quando o body tem a classe "escuro") */
 body.escuro {
-  background-color: #121212;
-  color: #ffffff;
+  --fundo: #0a2342;         /* azul no lugar do preto */
+  --card: #123a6b;
+  --campo: #0d2b57;
+  --texto: #ffffff;
+  --destaque: #f57c00;      /* laranja (no lugar do vermelho) */
+  --detalhe: #ffffff;       /* branco: bordas e botões */
+  --link: #ffffff;
+  --sombra: rgba(255, 255, 255, 0.45);
+  --placeholder: #b8c7e0;
 }
 
-/* links: o azul padrão fica ruim de ler no fundo escuro */
-body.escuro a {
-  color: #8ab4f8;
+
+/* ===== GERAL ===== */
+
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: Arial, sans-serif; /* o font-family serve para definir a fonte do texto */
+  margin: 0;
+  padding: 10px;
+  transition: background-color 0.2s, color 0.2s; /* troca suave de tema */
 }
 
-/* campos de formulário */
-body.escuro input,
-body.escuro textarea,
-body.escuro select {
-  background-color: #1e1e1e;
-  color: #ffffff;
-  border: 1px solid #555;
+h1 {
+  font-family: sans-serif;
+  letter-spacing: 3px; /* espaço entre as letras */
 }
 
-body.escuro ::placeholder {
-  color: #aaaaaa;
+a {
+  color: var(--link);
 }
 
-/* botões */
-body.escuro button {
-  background-color: #2a2a2a;
-  color: #ffffff;
-  border: 1px solid #555;
+
+/* ===== CABEÇALHO ===== */
+
+header {
+  margin: 0;
+  padding: 5px;
+  display: flex;                    /* alinha título e menu lado a lado */
+  justify-content: space-between;   /* título na esquerda, links na direita */
+  background-color: var(--destaque);       /* laranja */
+  border: 2px solid var(--detalhe);        /* borda */
+  border-radius: 10px;
+  color: white;
 }
 
-/* posts do feed */
-body.escuro article {
-  border: 1px solid #444;
-  background-color: #1a1a1a;
+/* links do menu ficam sempre brancos (o fundo é laranja nos dois modos) */
+header a {
+  color: white;
+  text-decoration: none;
+  margin-left: 40px;  /* espaço entre os links */
+  font-size: 22px;
 }
 
-/* pontinhos do carrossel (post.html) */
-body.escuro .carrossel-pontos button {
-  background: #666;
+
+/* ===== IMAGENS ===== */
+
+img {
+  border-radius: 40px;
+  border: 2px solid rgba(255, 255, 255, 0);
 }
-body.escuro .carrossel-pontos button.ativo {
-  background: #fff;
+
+/* imagem dos posts do feed: no máximo 50% da largura */
+#feed img {
+  max-width: 50%;
+  height: auto;
+}
+
+.post img, #previewImg {
+  max-width: 100%;
+}
+
+
+/* ===== LAYOUT DO POST.HTML ===== */
+
+.layout {
+  display: grid;                      /* ativa o grid */
+  grid-template-columns: 1fr 1fr;     /* duas colunas iguais */
+  gap: 24px;
+  align-items: start;                 /* cada coluna começa no topo */
+}
+
+/* em tela pequena fica uma coluna só */
+@media (max-width: 800px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+  .direita {
+    margin-left: 0;
+  }
+}
+
+
+/* ===== CARROSSEL ===== */
+
+.galeria {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.galeria .images {
+  margin: 0;
+}
+
+.galeria img {
+  width: 100%;
+  aspect-ratio: 401 / 650;
+  height: auto;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+}
+
+.carrossel-pontos {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.carrossel-pontos button {
+  width: 12px;
+  height: 12px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid var(--detalhe);
+  background: var(--card);
+  cursor: pointer;
+}
+
+.carrossel-pontos button.ativo {
+  background: var(--destaque);
+}
+
+
+/* ===== CAIXA DE CRIAR POST ===== */
+
+.direita {
+  margin-top: 75px;
+  margin-left: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: var(--card);
+  border: 2px solid var(--detalhe);
+  box-shadow: 0px 0px 18px var(--sombra);
+}
+
+.postar {
+  display: flex;
+  flex-direction: column; /* tudo em coluna */
+  gap: 10px;
+  font-size: 18px;
+}
+
+
+/* ===== CAMPOS DO FORMULÁRIO ===== */
+
+/* (o checkbox fica de fora pra não ficar estranho na config.html) */
+input:not([type="checkbox"]),
+textarea,
+select {
+  color: var(--texto);
+  background-color: var(--campo);
+  padding: 10px;
+  border-radius: 7px;
+  border: 2px solid var(--detalhe);
+  transition: box-shadow 0.2s; /* animação suave */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--sombra); /* brilho quando o campo está em foco */
+}
+
+::placeholder {
+  color: var(--placeholder);
+}
+
+/* botão "escolher arquivo" do input de imagem */
+input[type="file"]::file-selector-button {
+  background-color: var(--detalhe);
+  color: var(--fundo);
+  border: none;
+  border-radius: 7px;
+  padding: 6px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+
+/* ===== BOTÕES ===== */
+
+button {
+  background-color: var(--detalhe);
+  color: var(--fundo);
+  border: none;
+  border-radius: 7px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+
+/* ===== POSTS DO FEED ===== */
+
+article {
+  border: 1px solid var(--detalhe);
+  background-color: var(--card);
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
 }
