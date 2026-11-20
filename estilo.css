@@ -1,0 +1,47 @@
+/* ===== MODO ESCURO =====
+   O JS só liga/desliga a classe "escuro" no <body>.
+   Todas as cores do tema escuro ficam aqui. */
+
+body.escuro {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* links: o azul padrão fica ruim de ler no fundo escuro */
+body.escuro a {
+  color: #8ab4f8;
+}
+
+/* campos de formulário */
+body.escuro input,
+body.escuro textarea,
+body.escuro select {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+body.escuro ::placeholder {
+  color: #aaaaaa;
+}
+
+/* botões */
+body.escuro button {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+/* posts do feed */
+body.escuro article {
+  border: 1px solid #444;
+  background-color: #1a1a1a;
+}
+
+/* pontinhos do carrossel (post.html) */
+body.escuro .carrossel-pontos button {
+  background: #666;
+}
+body.escuro .carrossel-pontos button.ativo {
+  background: #fff;
+}
