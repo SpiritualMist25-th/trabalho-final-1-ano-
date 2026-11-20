@@ -241,7 +241,7 @@ function mostrarPosts() {
     if (post.imagem !== '') {
       var imagem = document.createElement('img');
       imagem.src = post.imagem;
-      imagem.style.maxWidth = '100%';
+      imagem.style.maxWidth = '50%';
       artigo.appendChild(imagem);
     }
 
