@@ -1,11 +1,11 @@
-/* ===== FUNÇÕES AJUDANTES ===== */
+
 
 // pega um elemento da página
 function pegar(seletor) {
   return document.querySelector(seletor);
 }
 
-// lê do localStorage
+// lê o banco de dados do navegador (localstorage)
 function lerDados(chave, padrao) {
   var texto = localStorage.getItem(chave);
   if (texto === null) {
@@ -14,12 +14,12 @@ function lerDados(chave, padrao) {
   return JSON.parse(texto);
 }
 
-// salva no localStorage
+// salva no banco de dados local 
 function salvarDados(chave, valor) {
   localStorage.setItem(chave, JSON.stringify(valor));
 }
 
-// mostra aviso na tela
+// mostra mensagem de alerta na tela
 function mostrarMensagem(texto, deuCerto) {
   var p = pegar('.msg');
   if (p === null) {
@@ -34,20 +34,13 @@ function mostrarMensagem(texto, deuCerto) {
 }
 
 
-/* ===== CONFIGURAÇÕES ===== */
 
-// aplica modo escuro e tamanho do texto
+// função do modo escuro da pagína 
 function aplicarConfiguracoes() {
   var config = lerDados('config', { escuro: false, tamanho: '1rem' });
 
-  // liga ou desliga a classe "escuro"; as cores ficam no estilo.css
+  // liga ou desliga o modo escuro 
   document.body.classList.toggle('escuro', config.escuro);
-
-  document.body.style.fontSize = config.tamanho;
-  var links = document.querySelectorAll('a');
-  for (var i = 0; i < links.length; i++) {
-    links[i].style.fontSize = config.tamanho;
-  }
 
   return config;
 }
@@ -74,21 +67,6 @@ if (pegar('#tema') !== null) {
   if (logado !== null) {
     pegar('#statusConta').textContent = 'Logado como ' + logado.nome + '.';
   }
-
-  // botão sair
-  pegar('#sair').addEventListener('click', function () {
-    localStorage.removeItem('sessao');
-    location.href = 'login.html';
-  });
-
-  // botão apagar tudo
-  pegar('#apagar').addEventListener('click', function () {
-    if (confirm('Apagar contas, posts e configurações deste navegador?')) {
-      localStorage.clear();
-      location.reload();
-    }
-  });
-}
 
 
 /* ===== SESSÃO ===== */
